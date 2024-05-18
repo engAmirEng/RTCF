@@ -36,14 +36,6 @@ fi
 
 
 
-if pgrep -x "RTCF" > /dev/null; then
-	print_red "Tunnel is running!. you must stop the tunnel before update. (pkill RTCF)"
-	print_red "update is canceled."
-  exit
-fi
-
-
-
 
 REQUIRED_PKG="unzip"
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG|grep "install ok installed")
